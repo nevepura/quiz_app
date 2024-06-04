@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatelessWidget {
-  const StartScreen(this.myFun, {super.key})
+  const StartScreen(this.switchScreen, {super.key})
       : mainColor = const Color.fromARGB(255, 255, 208, 0),
         secondaryColor = const Color.fromARGB(255, 209, 143, 0);
 
-  final Function() myFun;
+  final Function() switchScreen;
   final Color mainColor;
   final Color secondaryColor;
 
@@ -30,7 +30,7 @@ class StartScreen extends StatelessWidget {
           ),
           const Padding(padding: EdgeInsets.only(top: 40)),
           ElevatedButton.icon(
-            onPressed: myFun,
+            onPressed: switchScreen,
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color.fromARGB(255, 24, 41, 49),
               foregroundColor: Colors.white,

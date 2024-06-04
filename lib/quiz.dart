@@ -1,6 +1,8 @@
 import 'package:adv_basics/questions_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:adv_basics/start_screen.dart';
+import 'package:adv_basics/data/questions.dart';
+import 'package:adv_basics/results_screen.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -17,6 +19,11 @@ class _QuizState extends State<Quiz> {
 
   void chooseAnswer(String answer) {
     selectedAnswers.add(answer);
+    if (selectedAnswers.length >= questions.length) {
+      switchScreen(toResultsScreen: true);
+      //selectedAnswers.clear(); // Reset before repeating the quiz. Should be done by results screen when clicking the Repeat quiz button.
+    }
+    print('selected answers: $selectedAnswers');
   }
 
   @override
@@ -25,11 +32,15 @@ class _QuizState extends State<Quiz> {
     super.initState();
   }
 
-  void switchScreen() {
+  void switchScreen({toResultsScreen}) {
     setState(() {
-      activeScreen = QuestionsScreen(
-        onSelectAnswer: chooseAnswer,
-      );
+      if (toResultsScreen == true) {
+        activeScreen = ResultsScreen(chosenAnswers: selectedAnswers);
+      } else {
+        activeScreen = QuestionsScreen(
+          onSelectAnswer: chooseAnswer,
+        );
+      }
     });
   }
 
