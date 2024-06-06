@@ -23,7 +23,6 @@ class _QuizState extends State<Quiz> {
       switchScreen(toResultsScreen: true);
       //selectedAnswers.clear(); // Reset before repeating the quiz. Should be done by results screen when clicking the Repeat quiz button.
     }
-    print('selected answers: $selectedAnswers');
   }
 
   @override
@@ -32,10 +31,16 @@ class _QuizState extends State<Quiz> {
     super.initState();
   }
 
+  void restartQuiz() {
+    selectedAnswers = [];
+    switchScreen();
+  }
+
   void switchScreen({toResultsScreen}) {
     setState(() {
       if (toResultsScreen == true) {
-        activeScreen = ResultsScreen(chosenAnswers: selectedAnswers);
+        activeScreen = ResultsScreen(
+            chosenAnswers: selectedAnswers, restartQuiz: restartQuiz);
       } else {
         activeScreen = QuestionsScreen(
           onSelectAnswer: chooseAnswer,

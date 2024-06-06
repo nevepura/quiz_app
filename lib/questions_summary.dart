@@ -7,9 +7,9 @@ class QuestionsSummary extends StatelessWidget {
 
   Color calcColor(correctAns, userAns) {
     if (correctAns != userAns) {
-      return Colors.red;
+      return const Color.fromARGB(255, 187, 27, 15);
     }
-    return Colors.green;
+    return const Color.fromARGB(255, 53, 145, 84);
   }
 
   @override
@@ -48,7 +48,7 @@ class QuestionsSummary extends StatelessWidget {
                     Text(
                       data['correct_answer'] as String,
                       style: const TextStyle(
-                        color: Colors.green,
+                        color: Color.fromARGB(255, 19, 59, 71),
                       ),
                     ),
                     const SizedBox(
@@ -57,7 +57,7 @@ class QuestionsSummary extends StatelessWidget {
                     Text(
                       data['user_answer'] as String,
                       style: const TextStyle(
-                        color: Color.fromARGB(255, 70, 168, 248),
+                        color: Color.fromARGB(255, 199, 148, 39),
                       ),
                     ),
                   ],
