@@ -1,21 +1,18 @@
 import 'package:adv_basics/data/questions.dart';
-import 'package:adv_basics/models/quiz_question.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:adv_basics/data/questions.dart';
 import 'package:adv_basics/questions_summary.dart';
 
 class ResultsScreen extends StatelessWidget {
-  ResultsScreen(
+  const ResultsScreen(
       {required this.chosenAnswers, required this.restartQuiz, super.key});
 
   final List<String> chosenAnswers;
 
   final Function() restartQuiz;
 
-  List<Map<String, Object>> summaries = [];
-
   List<Map<String, Object>> getSummaryData() {
+    List<Map<String, Object>> summaries = [];
     for (var i = 0; i < chosenAnswers.length; i++) {
       summaries.add({
         'question_index': i,
@@ -28,7 +25,7 @@ class ResultsScreen extends StatelessWidget {
     return summaries;
   }
 
-  int numCorrectAnswers() {
+  int numCorrectAnswers(summaries) {
     return summaries
         .where((s) {
           return s['user_answer'] == s['correct_answer'];
@@ -39,7 +36,7 @@ class ResultsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    summaries = getSummaryData();
+    List<Map<String, Object>> summaries = getSummaryData();
 
     return SizedBox(
       width: double.infinity,
@@ -53,7 +50,7 @@ class ResultsScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                "You answered ${numCorrectAnswers()} out of ${questions.length} questions correctly",
+                "You answered ${numCorrectAnswers(summaries)} out of ${questions.length} questions correctly",
                 style: GoogleFonts.notoSans(
                     color: Colors.white,
                     fontSize: 24,
@@ -63,15 +60,15 @@ class ResultsScreen extends StatelessWidget {
               const SizedBox(height: 35),
               QuestionsSummary(summaries),
               const SizedBox(height: 35),
-              TextButton(
-                onPressed: restartQuiz,
-                child: Text("Repeat quiz",
-                    style: GoogleFonts.notoSans(
-                        color: Colors.white,
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.center),
-              )
+              TextButton.icon(
+                  onPressed: restartQuiz,
+                  label: Text("Repeat quiz",
+                      style: GoogleFonts.notoSans(
+                          color: Colors.white,
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.center),
+                  icon: const Icon(Icons.refresh))
             ]),
       ),
     );
