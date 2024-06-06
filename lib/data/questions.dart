@@ -1,16 +1,28 @@
 import 'package:adv_basics/models/quiz_question.dart';
 
 const questions = [
-  QuizQuestion('Biggest planet of solar system?', [
+  QuizQuestion('What is the biggest planet of solar system?', [
     'Jupiter',
     'Uranus',
     'Saturn',
     'Neptune',
   ]),
-  QuizQuestion('Something that is not red?', [
+  QuizQuestion('Which of the following objects is not red?', [
     'Salt',
     'Rust',
     'Blood',
     'Heart',
+  ]),
+  QuizQuestion('How many seconds there are in a day?', [
+    '86400',
+    '600',
+    '12800',
+    '27000',
+  ]),
+  QuizQuestion('Which of these anymal lays eggs?', [
+    'Bee',
+    'Dog',
+    'Elephant',
+    'Whale',
   ]),
 ];

@@ -8,7 +8,7 @@ import 'package:adv_basics/questions_summary.dart';
 class ResultsScreen extends StatelessWidget {
   ResultsScreen({required this.chosenAnswers, super.key});
 
-  List<String> chosenAnswers = [];
+  final List<String> chosenAnswers;
 
   List<Map<String, Object>> summaries = [];
 
@@ -57,9 +57,9 @@ class ResultsScreen extends StatelessWidget {
                     fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 35),
               QuestionsSummary(summaries),
-              const SizedBox(height: 40),
+              const SizedBox(height: 35),
               TextButton(
                 onPressed: () {},
                 child: Text("Repeat quiz",
