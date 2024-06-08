@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:adv_basics/start_screen.dart';
 import 'package:adv_basics/data/questions.dart';
 import 'package:adv_basics/results_screen.dart';
+import 'package:adv_basics/colors.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -21,7 +22,6 @@ class _QuizState extends State<Quiz> {
     selectedAnswers.add(answer);
     if (selectedAnswers.length >= questions.length) {
       switchScreen(toResultsScreen: true);
-      //selectedAnswers.clear(); // Reset before repeating the quiz. Should be done by results screen when clicking the Repeat quiz button.
     }
   }
 
@@ -58,15 +58,17 @@ class _QuizState extends State<Quiz> {
           title: const Center(
             child: Text("Quiz app"),
           ),
-          backgroundColor: const Color.fromARGB(255, 24, 41, 49),
+          backgroundColor: darkerLagoon,
         ),
         body: Container(
           decoration: const BoxDecoration(
-              gradient: LinearGradient(colors: [
-            Color.fromARGB(255, 89, 132, 145),
-            Color.fromARGB(255, 59, 97, 109),
-            Color.fromARGB(255, 42, 76, 87),
-          ])),
+            gradient: LinearGradient(
+              colors: [
+                lightLagoon,
+                darkLagoon,
+              ],
+            ),
+          ),
           child: activeScreen,
         ),
       ),

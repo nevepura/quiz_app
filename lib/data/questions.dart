@@ -25,4 +25,16 @@ const questions = [
     'Elephant',
     'Whale',
   ]),
+  QuizQuestion('Where are you going now?', [
+    'Home',
+    'School',
+    'Church',
+    'Beach',
+  ]),
+  QuizQuestion('What is the lamest programming title?', [
+    'Tech lead',
+    'Glue programmer',
+    'Java champion',
+    'Web master',
+  ]),
 ];

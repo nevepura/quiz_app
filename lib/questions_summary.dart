@@ -1,3 +1,4 @@
+import 'package:adv_basics/colors.dart';
 import 'package:flutter/material.dart';
 
 class QuestionsSummary extends StatelessWidget {
@@ -7,21 +8,21 @@ class QuestionsSummary extends StatelessWidget {
 
   Color calcColor(correctAns, userAns) {
     if (correctAns != userAns) {
-      return const Color.fromARGB(255, 187, 27, 15);
+      return wrongAnsColor;
     }
-    return const Color.fromARGB(255, 53, 145, 84);
+    return rightAnsColor;
   }
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200,
+      height: 400,
       child: SingleChildScrollView(
         child: Column(
           children: summaryData.map((data) {
             return Row(
               children: [
-                const SizedBox(height: 100),
+                const SizedBox(height: 80),
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 16),
                   child: CircleAvatar(
@@ -48,7 +49,7 @@ class QuestionsSummary extends StatelessWidget {
                     Text(
                       data['correct_answer'] as String,
                       style: const TextStyle(
-                        color: Color.fromARGB(255, 19, 59, 71),
+                        color: darkerLagoon,
                       ),
                     ),
                     const SizedBox(
@@ -57,7 +58,7 @@ class QuestionsSummary extends StatelessWidget {
                     Text(
                       data['user_answer'] as String,
                       style: const TextStyle(
-                        color: Color.fromARGB(255, 199, 148, 39),
+                        color: orange,
                       ),
                     ),
                   ],

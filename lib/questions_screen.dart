@@ -32,9 +32,8 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
     return SizedBox(
       width: double.infinity,
       child: Container(
-        margin: const EdgeInsets.only(
-          left: 40,
-          right: 40,
+        margin: const EdgeInsets.symmetric(
+          horizontal: 60,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -42,30 +41,23 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
           children: [
             Text(
               curQuestion.text,
-              style: GoogleFonts.notoSans(
+              style: GoogleFonts.lato(
                   color: Colors.white,
                   fontSize: 24,
                   fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
-
             const SizedBox(height: 30),
-            ...curQuestion.getShuffledAnswers().map((answer) {
-              return AnswerButton(
-                answerText: answer,
-                onTap: () {
-                  answerQuestion(answer);
-                },
-              );
-            }),
-            // An alternative way:
-            /*
-            for (var ans in curQuestion.answers)
-              AnswerButton(
-                answerText: ans,
-                onTap: () {},
-              )
-            */
+            ...curQuestion.getShuffledAnswers().map(
+              (answer) {
+                return AnswerButton(
+                  answerText: answer,
+                  onTap: () {
+                    answerQuestion(answer);
+                  },
+                );
+              },
+            ),
           ],
         ),
       ),

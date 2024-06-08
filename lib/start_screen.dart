@@ -1,13 +1,11 @@
+import 'package:adv_basics/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class StartScreen extends StatelessWidget {
-  const StartScreen(this.switchScreen, {super.key})
-      : mainColor = const Color.fromARGB(255, 255, 208, 0),
-        secondaryColor = const Color.fromARGB(255, 209, 143, 0);
+  const StartScreen(this.switchScreen, {super.key});
 
   final Function() switchScreen;
-  final Color mainColor;
-  final Color secondaryColor;
 
   @override
   Widget build(context) {
@@ -18,13 +16,13 @@ class StartScreen extends StatelessWidget {
           Image.asset(
             "assets/images/quiz-logo.png",
             width: 300,
-            color: mainColor,
+            color: darkYellow,
           ),
           const Padding(padding: EdgeInsets.only(top: 40)),
-          Text(
-            "Are you ready for the quiz? ",
+          const Text(
+            "Are you ready for the challenge? ",
             style: TextStyle(
-              color: secondaryColor,
+              color: orange,
               fontSize: 30,
             ),
           ),
@@ -32,11 +30,19 @@ class StartScreen extends StatelessWidget {
           ElevatedButton.icon(
             onPressed: switchScreen,
             style: ElevatedButton.styleFrom(
-              backgroundColor: const Color.fromARGB(255, 24, 41, 49),
+              backgroundColor: darkerLagoon,
               foregroundColor: Colors.white,
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 40,
+                vertical: 20,
+              ),
             ),
-            label: const Text("Start"),
+            label: Text("Start",
+                style: GoogleFonts.notoSans(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center),
             icon: const Icon(Icons.start),
           ),
         ],
