@@ -1,16 +1,20 @@
-# adv_basics
+# Quiz app
+A quiz app made with Flutter.
 
-A new Flutter project.
+## Contents
+ The app contains:
+- a quiz with multiple questions and a final summary
+- the questions can be changed at will in `questions.dart`
+- the quiz can be repeated endlessly
 
-## Getting Started
+## Requirements
+Flutter v3 or above. Works with v3.13.7.
 
-This project is a starting point for a Flutter application.
+## How to run 
+Launch with `flutter run`.
 
-A few resources to get you started if this is your first Flutter project:
+## Possible improvements
+- give the chance to just end the quiz without restarting it
+- put the questions in a json file instead of a dart class.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
