@@ -15,6 +15,7 @@ Launch with `flutter run`.
 
 ## Possible improvements
 - give the chance to just end the quiz without restarting it
-- put the questions in a json file instead of a dart class.
+- put the questions in a json file instead of a dart class
+- smaller components
 
 
