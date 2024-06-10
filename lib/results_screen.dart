@@ -47,31 +47,41 @@ class ResultsScreen extends StatelessWidget {
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          //crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
               "You answered ${numCorrectAnswers(summaries)} out of ${questions.length} questions correctly",
               style: GoogleFonts.notoSans(
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold),
+                color: Colors.white,
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 35),
+            const SizedBox(height: 100),
             QuestionsSummary(summaries),
             const SizedBox(height: 35),
-            TextButton.icon(
+            ElevatedButton.icon(
               onPressed: restartQuiz,
-              label: Text("Repeat quiz",
-                  style: GoogleFonts.notoSans(
-                    color: Colors.white,
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  textAlign: TextAlign.center),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: darkerLagoon,
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 40,
+                  vertical: 20,
+                ),
+              ),
+              label: Text(
+                "Repeat quiz",
+                style: GoogleFonts.notoSans(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+              ),
               icon: const Icon(
                 Icons.refresh,
-                color: lighterLagoon,
+                color: Colors.white,
               ),
             ),
           ],

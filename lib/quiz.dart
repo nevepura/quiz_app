@@ -58,14 +58,14 @@ class _QuizState extends State<Quiz> {
           title: const Center(
             child: Text("Quiz app"),
           ),
-          backgroundColor: darkerLagoon,
+          backgroundColor: darkLagoon,
         ),
         body: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [
                 lightLagoon,
-                darkLagoon,
+                lagoon,
               ],
             ),
           ),

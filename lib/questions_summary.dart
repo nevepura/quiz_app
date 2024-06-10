@@ -16,7 +16,7 @@ class QuestionsSummary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 400,
+      height: 320,
       child: SingleChildScrollView(
         child: Column(
           children: summaryData.map((data) {
@@ -24,7 +24,9 @@ class QuestionsSummary extends StatelessWidget {
               children: [
                 const SizedBox(height: 80),
                 Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 16),
+                  margin: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                  ),
                   child: CircleAvatar(
                     backgroundColor:
                         calcColor(data['correct_answer'], data['user_answer']),
@@ -40,16 +42,7 @@ class QuestionsSummary extends StatelessWidget {
                       data['question'] as String,
                       style: const TextStyle(
                         color: Colors.white,
-                        fontSize: 17,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      data['correct_answer'] as String,
-                      style: const TextStyle(
-                        color: darkerLagoon,
+                        fontSize: 19,
                       ),
                     ),
                     const SizedBox(
@@ -58,8 +51,17 @@ class QuestionsSummary extends StatelessWidget {
                     Text(
                       data['user_answer'] as String,
                       style: const TextStyle(
-                        color: orange,
+                        color: lighterLagoon,
                       ),
+                    ),
+                    Text(
+                      data['correct_answer'] as String,
+                      style: const TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 5,
                     ),
                   ],
                 ))

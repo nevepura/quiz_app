@@ -8,6 +8,7 @@ const darkerLagoon = Color.fromARGB(255, 19, 48, 57);
 const darkestLagoon = Color.fromARGB(255, 8, 34, 42);
 const darkYellow = Color.fromARGB(255, 255, 208, 0);
 const orange = Color.fromARGB(255, 209, 143, 0);
+const brightOrange = Color.fromARGB(255, 209, 94, 0);
 
 const wrongAnsColor = Color.fromARGB(255, 138, 59, 54);
 const rightAnsColor = Color.fromARGB(255, 39, 143, 120);
