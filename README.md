@@ -1,6 +1,7 @@
 # Quiz app
 A quiz app made with Flutter.
 
+![alt text](https://i.imgur.com/fT939Kv.gif)
 ## Contents
  The app contains:
 - a quiz with multiple questions and a final summary
